@@ -3,7 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>pdomi06</title>
+    <title>Dominik Patkós | Full Stack Software Engineer Intern</title>
+    <meta
+      name="description"
+      content="Dominik Patkós is a Full Stack Software Engineer Intern at Bosch Hungary and a Computer Science Engineering student at Óbuda University. Explore his projects and CV."
+    />
     <link rel="stylesheet" href="css/style.css" />
 
     <!--Skins-->
@@ -61,10 +65,10 @@
         <div class="logo">
           <div><img src="assets/logo.svg" alt="Logo" class="logo-img" /></div>
         </div>
-        <div class="nav-toggler">
+        <button type="button" class="nav-toggler" aria-label="Toggle navigation" aria-controls="site-nav" aria-expanded="false">
           <span></span>
-        </div>
-        <ul class="nav">
+        </button>
+        <ul class="nav" id="site-nav">
           <li>
             <a href="#home" class="active"><i class="fa fa-home"></i> Home</a>
           </li>
@@ -87,27 +91,18 @@
           <div class="container">
             <div class="row">
               <div class="home-info padd-15">
-                <h3 class="hello">
-                  Hello, my name is <span class="name">Dominik</span>
-                </h3>
-                <h3 class="my-profession">
-                  I am a
-                  <span class="typing" id="typing"
-                    >Software Engineer Student</span
-                  >
-                </h3>
+                <h1 class="hello">
+                  Hello, my name is <span class="name">Dominik Patkós</span>
+                </h1>
+                <h2 class="my-profession">Full Stack Software Engineer Intern</h2>
                 <p>
-                  Software Engineering student who approaches coding, debugging,
-                  and design with careful attention to detail. He focuses on
-                  solving problems methodically and enjoys collaborating on
-                  projects that create practical tools.
+                  I work with C# and Angular at Bosch Hungary and study Computer
+                  Science Engineering at Óbuda University in Budapest.
                 </p>
-                <a
-                  href="#contact"
-                  data-section-index="0"
-                  class="btn hire-me asd"
-                  >Contact</a
-                >
+                <div class="home-actions">
+                  <a href="#services" class="btn">View projects</a>
+                  <a href="#contact" class="text-link">Contact me</a>
+                </div>
               </div>
             </div>
           </div>
@@ -125,302 +120,110 @@
               <div class="about-content padd-15">
                 <div class="row">
                   <div class="about-text padd-15">
-                    <h3>
-                      My name is Dominik Patkós and I am
-                      <span>a Software Engineer Student</span>
-                    </h3>
                     <p>
-                      Software engineering student who enjoys building practical
-                      solutions through careful, detail-oriented work. I focus
-                      on understanding problems deeply and refining my skills to
-                      deliver reliable results, whether coding, debugging, or
-                      collaborating on team projects.
+                      I got my start at Lionsdale Studio, building C# desktop
+                      applications alongside senior developers. During my second
+                      placement I led frontend development on ReTicket, the ticket
+                      resale platform my team built for our final-year project.
                     </p>
                   </div>
                 </div>
                 <div class="row">
                   <div class="personal-info padd-15">
-                    <div class="row">
-                      <div class="info-item padd-15">
-                        <p>Country: <span>Hungary</span></p>
-                      </div>
-                      <div class="info-item padd-15">
-                        <p>
-                          School: <span>BGéSZC Eötvös Loránd Technikum</span>
-                        </p>
-                      </div>
-                      <div class="info-item padd-15">
-                        <p>City: <span>Budapest</span></p>
-                      </div>
-                      <div class="info-item padd-15">
-                        <p>Intership: <span>Lionsdale Studio</span></p>
-                      </div>
-                      <div class="info-item padd-15">
-                        <p>Birthday: <span>01. 2006.</span></p>
-                      </div>
-                      <div class="info-item padd-15">
-                        <p>Job: <span>None</span></p>
-                      </div>
-                    </div>
-                    <div class="row">
-                      <div class="buttons padd-15">
-                        <a
-                          href="./assets/PatkosDominik_CV.pdf"
-                          target="_blank"
-                          class="btn"
-                          >Download CV</a
-                        >
-                        <a
-                          href="#contact"
-                          class="btn hire-me hiremee"
-                          data-section-index="1"
-                          >Contact</a
-                        >
-                      </div>
+                    <dl class="profile-facts">
+                      <div><dt>Based in</dt><dd>Budapest, Hungary</dd></div>
+                      <div><dt>Employer</dt><dd>Bosch Hungary</dd></div>
+                      <div><dt>University</dt><dd>Óbuda University</dd></div>
+                      <div><dt>Degree in progress</dt><dd>BSc in Computer Science Engineering</dd></div>
+                    </dl>
+                    <div class="buttons">
+                      <a href="./assets/PatkosDominik_CV.pdf" download class="btn">Download CV</a>
+                      <a href="#contact" class="text-link">Contact me</a>
                     </div>
                   </div>
                   <div class="skills padd-15">
-                    <div class="row">
-                      <div class="skill-item padd-15">
-                        <h5>
-                          Programming Languages
-                          <a
-                            href="javascript:void(0);"
-                            class="button"
-                            onclick="showHideSkills('pl')"
-                          >
-                            <i class="pl fa fa-arrow-down"></i>
-                          </a>
-                        </h5>
-                        <hr />
-                        <div class="skill-items-pl hide-skilz">
-                          <div class="skilz-pl">
-                            <h5 class="text-pl">HTML</h5>
-                            <div class="progress">
-                              <div class="progress-in" style="width: 99%"></div>
-                              <div class="skill-percent text-pl">99%</div>
-                            </div>
-                          </div>
-                          <div class="skilz-pl">
-                            <h5 class="text-pl">CSS</h5>
-                            <div class="progress">
-                              <div class="progress-in" style="width: 96%"></div>
-                              <div class="skill-percent text-pl">96%</div>
-                            </div>
-                          </div>
-                          <div class="skilz-pl">
-                            <h5 class="text-pl">JavaScript</h5>
-                            <div class="progress">
-                              <div class="progress-in" style="width: 78%"></div>
-                              <div class="skill-percent text-pl">78%</div>
-                            </div>
-                          </div>
-                          <div class="skilz-pl">
-                            <h5 class="text-pl">Python</h5>
-                            <div class="progress">
-                              <div class="progress-in" style="width: 91%"></div>
-                              <div class="skill-percent text-pl">91%</div>
-                            </div>
-                          </div>
-                          <div class="skilz-pl">
-                            <h5 class="text-pl">C#</h5>
-                            <div class="progress">
-                              <div class="progress-in" style="width: 63%"></div>
-                              <div class="skill-percent text-pl">63%</div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="skill-item padd-15">
-                        <h5>
-                          Frameworks and Libraries
-                          <a
-                            href="javascript:void(0);"
-                            class="button"
-                            onclick="showHideSkills('fl')"
-                          >
-                            <i class="fl fa fa-arrow-down"></i>
-                          </a>
-                        </h5>
-                        <hr />
-                        <div class="skill-items-fl hide-skilz">
-                          <div class="skilz-fl">
-                            <h5 class="text-fl">Bootstrap</h5>
-                            <div class="progress">
-                              <div
-                                class="progress-in"
-                                style="width: 100%"
-                              ></div>
-                              <div class="skill-percent text-fl">100%</div>
-                            </div>
-                          </div>
-                          <div class="skilz-fl">
-                            <h5 class="text-fl">React.js</h5>
-                            <div class="progress">
-                              <div class="progress-in" style="width: 5%"></div>
-                              <div class="skill-percent text-fl">5%</div>
-                            </div>
-                          </div>
-                          <div class="skilz-fl">
-                            <h5 class="text-fl">Vue.js</h5>
-                            <div class="progress">
-                              <div class="progress-in" style="width: 10%"></div>
-                              <div class="skill-percent text-fl">10%</div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="skill-item padd-15">
-                        <h5>
-                          Back-end Technologies
-                          <a
-                            href="javascript:void(0);"
-                            class="button"
-                            onclick="showHideSkills('bt')"
-                          >
-                            <i class="bt fa fa-arrow-down"></i>
-                          </a>
-                        </h5>
-                        <hr />
-                        <div class="skill-items-bt hide-skilz">
-                          <div class="skilz-bt">
-                            <h5 class="text-bt">Node.js</h5>
-                            <div class="progress">
-                              <div class="progress-in" style="width: 71%"></div>
-                              <div class="skill-percent text-bt">71%</div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="skill-item padd-15">
-                        <h5>
-                          Databases
-                          <a
-                            href="javascript:void(0);"
-                            class="button"
-                            onclick="showHideSkills('bs')"
-                          >
-                            <i class="bs fa fa-arrow-down"></i>
-                          </a>
-                        </h5>
-                        <hr />
-                        <div class="skill-items-bs hide-skilz">
-                          <div class="skilz-bs">
-                            <h5 class="text-bs">MongoDB</h5>
-                            <div class="progress">
-                              <div class="progress-in" style="width: 84%"></div>
-                              <div class="skill-percent text-bs">84%</div>
-                            </div>
-                          </div>
-                          <div class="skilz-bs">
-                            <h5 class="text-bs">MySQL</h5>
-                            <div class="progress">
-                              <div class="progress-in" style="width: 89%"></div>
-                              <div class="skill-percent text-bs">89%</div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
+                    <h3 class="title">Technical skills</h3>
+                    <details open>
+                      <summary>Frontend</summary>
+                      <p>Angular, React, TypeScript, JavaScript, HTML, CSS, Bootstrap</p>
+                    </details>
+                    <details>
+                      <summary>Backend and data</summary>
+                      <p>C#, PHP, Laravel, Node.js, REST APIs, SQL, PostgreSQL, MongoDB</p>
+                    </details>
+                    <details>
+                      <summary>Tools and practices</summary>
+                      <p>Git, Stripe, Vercel, Laravel Cloud, Agile development</p>
+                    </details>
                   </div>
                 </div>
                 <div class="row">
                   <div class="education padd-15">
-                    <h3 class="title">educations</h3>
-                    <div class="row">
-                      <div class="timeline-box padd-15">
-                        <div class="timeline shadow-dark">
-                          <!--Item beginn-->
-                          <div class="timeline-item">
-                            <div class="circle-dot"></div>
-                            <h3 class="timeline-date">
-                              <i class="fa fa-calendar"></i> 2021 - Present
-                            </h3>
-                            <h4 class="timeline-title">
-                              BGéSZC Eötvös Loránd Technikum - Technical School
-                              of Budapest
-                            </h4>
-                            <p class="timeline-text">
-                              During my time in school, I built a solid
-                              foundation in web development and programming. I
-                              learned HTML, CSS, and JavaScript, which allowed
-                              me to create dynamic and responsive web pages.
-                              Additionally, I expanded my skill set by learning
-                              Python, enhancing my ability to develop versatile
-                              and robust applications.
-                            </p>
-                          </div>
-                          <!--Item End-->
-                        </div>
+                    <h3 class="title">Education</h3>
+                    <div class="timeline shadow-dark">
+                      <div class="timeline-item">
+                        <div class="circle-dot"></div>
+                        <p class="timeline-date">Sep 2026 – Feb 2030 (expected)</p>
+                        <h4 class="timeline-title">Óbuda University</h4>
+                        <p class="timeline-text">BSc in Computer Science Engineering.</p>
+                      </div>
+                      <div class="timeline-item">
+                        <div class="circle-dot"></div>
+                        <p class="timeline-date">2021 – 2026</p>
+                        <h4 class="timeline-title">BGéSZC Eötvös Loránd Technikum</h4>
+                        <p class="timeline-text">
+                          Technical secondary school diploma in Computer Software
+                          Engineering, with coursework in full-stack development,
+                          database design and software testing.
+                        </p>
+                      </div>
+                    </div>
+                    <h3 class="title certification-title">Certification</h3>
+                    <div class="timeline shadow-dark">
+                      <div class="timeline-item">
+                        <div class="circle-dot"></div>
+                        <p class="timeline-date">Nov 2023</p>
+                        <h4 class="timeline-title">Using MongoDB with Node.js</h4>
+                        <p class="timeline-text">Issued by MongoDB.</p>
                       </div>
                     </div>
                   </div>
                   <div class="experience padd-15">
-                    <h3 class="title">experiences</h3>
-                    <div class="row">
-                      <div class="timeline-box padd-15">
-                        <div class="timeline shadow-dark">
-
-                          <!--Item beginn-->
-                          <div class="timeline-item">
-                            <div class="circle-dot"></div>
-                            <h3 class="timeline-date">
-                              <i class="fa fa-calendar"></i> 02/2025 - Present
-                            </h3>
-                            <h4 class="timeline-title">
-                              Intership - Junior Software Engineer
-                            </h4>
-                            <p class="timeline-text">
-                              At Lionsdale Studio, continuing my Internship
-                            </p>
-                          </div>
-                          <!--Item End-->
-                          <!--Item beginn-->
-                          <div class="timeline-item">
-                            <div class="circle-dot"></div>
-                            <h3 class="timeline-date">
-                              <i class="fa fa-calendar"></i> 10/2024 - 11/2024
-                            </h3>
-                            <h4 class="timeline-title">
-                              Intership - Junior Software Engineer
-                            </h4>
-                            <p class="timeline-text">
-                              Carried out my practical placement at Athenea's,
-                              C. Martínez de la Rosa, 100, Bailén Miraflores,
-                              29010 Málaga, Spain. During this internship, I was
-                              part of the "QUALITY EDUCATION, QUALITY
-                              PRODUCTION" project. This project has been
-                              organised within the framework of a systemic
-                              project implemented by the Foundation for the
-                              Development of the Education System co-financed by
-                              the European Social Fund, Operational Program
-                              Knowledge Education Development.
-                            </p>
-                          </div>
-                          <!--Item End-->
-                          <!--Item beginn-->
-                          <div class="timeline-item">
-                            <div class="circle-dot"></div>
-                            <h3 class="timeline-date">
-                              <i class="fa fa-calendar"></i> 03/2024 - 06/2024
-                            </h3>
-                            <h4 class="timeline-title">
-                              Intership - Junior Software Engineer
-                            </h4>
-                            <p class="timeline-text">
-                              At Lionsdale Studio, I developed desktop
-                              applications using C#, gaining proficiency in
-                              advanced techniques and best practices. During
-                              this time, I applied theoretical knowledge to
-                              real-world projects, contributing to team efforts
-                              and collaborating closely with senior developers.
-                              My internship highlighted my commitment to
-                              continuous learning and professional growth in a
-                              dynamic software development environment.
-                            </p>
-                          </div>
-                          <!--Item End-->
-                        </div>
+                    <h3 class="title">Experience</h3>
+                    <div class="timeline shadow-dark">
+                      <div class="timeline-item">
+                        <div class="circle-dot"></div>
+                        <p class="timeline-date">Sep 2026 – present</p>
+                        <h4 class="timeline-title">Full Stack Software Engineer Intern · Bosch Hungary</h4>
+                        <p class="timeline-text">
+                          I work with C# and Angular on an Agile team in Budapest.
+                        </p>
+                      </div>
+                      <div class="timeline-item">
+                        <div class="circle-dot"></div>
+                        <p class="timeline-date">Jan 2025 – Jun 2026</p>
+                        <h4 class="timeline-title">Student Software Developer · Lionsdale Studio Kft</h4>
+                        <p class="timeline-text">
+                          I worked on ReTicket during my dual education placement,
+                          connecting its React frontend to a Laravel REST API.
+                        </p>
+                      </div>
+                      <div class="timeline-item">
+                        <div class="circle-dot"></div>
+                        <p class="timeline-date">Oct 2024 – Nov 2024</p>
+                        <h4 class="timeline-title">Practical placement · Athenea’s</h4>
+                        <p class="timeline-text">
+                          I took part in the Quality Education, Quality Production
+                          project during an international placement in Málaga, Spain.
+                        </p>
+                      </div>
+                      <div class="timeline-item">
+                        <div class="circle-dot"></div>
+                        <p class="timeline-date">Mar 2024 – Jun 2024</p>
+                        <h4 class="timeline-title">Student Software Developer · Lionsdale Studio Kft</h4>
+                        <p class="timeline-text">
+                          I built C# desktop applications with guidance from senior developers.
+                        </p>
                       </div>
                     </div>
                   </div>
@@ -435,30 +238,35 @@
           <div class="container">
             <div class="row">
               <div class="section-title padd-15">
-                <h2>Project</h2>
+                <h2>Projects</h2>
               </div>
             </div>
             <div class="row">
-              <!--Item Start-->
-              <a href="https://github.com/pdomi06/Sema" target="_blank">
-                <div class="service-item padd-15">
-                  <div class="service-item-inner">
-                    <div class="icon">
-                      <i class="fa fa-brands fa-discord"></i>
-                    </div>
-                    <h4>Sema</h4>
-                    <p>
-                      Sema is a powerful Discord bot that simplifies server
-                      management. With user and channel management, and server
-                      configuration, Sema keeps your server organized and
-                      running smoothly. Whether you're a small community or a
-                      large organization, Sema has the tools you need to manage
-                      your Discord server like a pro.
-                    </p>
-                  </div>
+              <article class="service-item padd-15">
+                <div class="service-item-inner">
+                  <div class="icon"><i class="fa fa-ticket" aria-hidden="true"></i></div>
+                  <h3>ReTicket</h3>
+                  <p>
+                    A peer-to-peer marketplace where fans can list and buy event
+                    tickets. I led frontend development with React and TypeScript.
+                    The platform uses a Laravel REST API, PostgreSQL and Stripe
+                    Checkout, with the frontend on Vercel and the API on Laravel Cloud.
+                  </p>
+                  <a class="text-link" href="https://github.com/pdomi06/ReTicket" target="_blank" rel="noopener">View ReTicket on GitHub</a>
                 </div>
-              </a>
-              <!--Item End-->
+              </article>
+              <article class="service-item padd-15">
+                <div class="service-item-inner">
+                  <div class="icon"><i class="fa-brands fa-discord" aria-hidden="true"></i></div>
+                  <h3>Sema</h3>
+                  <p>
+                    My first project was a Discord bot built with Node.js and MongoDB.
+                    It logs server events for moderators and lets members queue
+                    music in voice channels.
+                  </p>
+                  <a class="text-link" href="https://github.com/pdomi06/Sema" target="_blank" rel="noopener">View Sema on GitHub</a>
+                </div>
+              </article>
             </div>
           </div>
         </section>
@@ -478,7 +286,8 @@
                 <a href="https://github.com/pdomi06">
                   <div class="icon">
                     <i class="fa fa-brands fa-github"></i>
-                    <h4>pdomi06</h4>
+                    <h4>GitHub</h4>
+                    <p>pdomi06</p>
                   </div>
                 </a>
               </div>
@@ -490,7 +299,8 @@
                 >
                   <div class="icon">
                     <i class="fa fa-brands fa-linkedin"></i>
-                    <h4>Dominik Patkós</h4>
+                    <h4>LinkedIn</h4>
+                    <p>Dominik Patkós</p>
                   </div>
                 </a>
               </div>

@@ -1,150 +1,63 @@
-const nav = document.querySelector(".nav"),
-    navList = nav.querySelectorAll("li"),
-    totalNavList = navList.length,
-    allSection = document.querySelectorAll(".section"),
-    totalSection = allSection.length;
-    for(let i=0; i<totalNavList; i++)
-    {
-        const a = navList[i].querySelector("a");
-        a.addEventListener("click", function()
-        {
-            removeBackSection()
-            for(let j=0; j<totalNavList; j++)
-            {
-                if (navList[j].querySelector("a").classList.contains("active")) 
-                {
-                    addBackSection(j)
-                    
-                }
-                navList[j].querySelector("a").classList.remove("active");
-            }
-            this.classList.add("active")
-            showSection(this);
-            if (window.innerWidth < 1200){
-                asideSectionTogglerBtn();
-            }
-        })
-    }
-    function showSection(element){
-        for(let i=0; i<totalSection; i++){
-            allSection[i].classList.remove("active");
-        }
-        const target = element.getAttribute("href").split("#")[1];
-        document.querySelector("#" + target).classList.add("active")
+const sections = Array.from(document.querySelectorAll(".section"));
+const nav = document.querySelector(".nav");
+const navLinks = nav.querySelectorAll("a");
+const aside = document.querySelector(".aside");
+const navToggle = document.querySelector(".nav-toggler");
 
+function showCurrentSection() {
+    const target = sections.find(section => "#" + section.id === location.hash) || sections[0];
+    const previous = document.querySelector(".section.active");
+
+    for (const section of sections) {
+        section.classList.toggle("back-section", section === previous && section !== target);
+        section.classList.toggle("active", section === target);
+        section.inert = section !== target;
     }
-    function removeBackSection(){
-        for(let i=0; i<totalSection; i++){
-            allSection[i].classList.remove("back-section");
+    for (const link of navLinks) {
+        const selected = link.hash === "#" + target.id;
+        link.classList.toggle("active", selected);
+        if (selected) {
+            link.setAttribute("aria-current", "page");
+        } else {
+            link.removeAttribute("aria-current");
         }
     }
-    function addBackSection(num){
-        allSection[num].classList.add("back-section");
-    }
-    function updateNav(element){
-        for( let i=0; i<totalNavList; i++ ){
-            navList[i].querySelector("a").classList.remove("active");
-            const target = element.getAttribute("href").split("#")[1];
-            if (target === navList[i].querySelector("a").getAttribute("href").split("#")[1]) {
-                navList[i].querySelector("a").classList.add("active");
-            }
-        }
-    }
-    document.querySelector(".hire-me").addEventListener("click", function(){
-        const sectionIndex = this.getAttribute("data-section-index");
-        showSection(this);
-        updateNav(this);
-        removeBackSection();
-        addBackSection(sectionIndex);
-
-    })
-    document.querySelector(".hiremee").addEventListener("click", function(){
-        const sectionIndex = this.getAttribute("data-section-index");
-        showSection(this);
-        updateNav(this);
-        removeBackSection();
-        addBackSection(sectionIndex);
-
-    })
-    const navTogglerBtn = document.querySelector(".nav-toggler"),
-        aside = document.querySelector(".aside");
-        navTogglerBtn.addEventListener("click", () =>{
-            asideSectionTogglerBtn();
-        })
-        function asideSectionTogglerBtn(){
-            aside.classList.toggle("open");
-            navTogglerBtn.classList.toggle("open");
-            for(let i=0; i<totalSection; i++){
-                allSection[i].classList.toggle("open")
-            }
-        }
-        const styleSwitcherToggler = document.querySelector(".style-switcher-toggler");
-        styleSwitcherToggler.addEventListener("click", () =>{
-            document.querySelector(".style-switcher").classList.toggle("open");
-        })
-        
-        window.addEventListener("scroll", () =>{
-            if (document.querySelector("style-switcher").classList.contains("open")) {
-                document.querySelector(".style-switcher").classList.remove("open");
-            }
-        })
-        const alternateStyles = document.querySelectorAll(".alternate-style");
-        function setActiveStyle(color)
-        {
-            alternateStyles.forEach((style) =>{
-                if (color == style.getAttribute("title")) {
-                    style.removeAttribute("disabled");
-                }else{
-                    style.setAttribute("Disabled", "true");
-                }
-            })
-        };
-        const dayNight = document.querySelector(".day-night");
-        dayNight.addEventListener("click",() => {
-            dayNight.querySelector("i").classList.toggle("fa-sun");
-            dayNight.querySelector("i").classList.toggle("fa-moon");
-            document.body.classList.toggle("dark");
-        })
-        window.addEventListener("load", () =>{
-            if (document.body.classList.contains("dark")) {
-                dayNight.querySelector("i").classList.add("fa-sun");
-            }else{
-                dayNight.querySelector("i").classList.add("fa-moon");
-            }
-        })
-const keywords = ["Software Engineer Student", "Bot Developer", "Freelancer"];
-
-        function changeKeyword() {
-            const keywordElement = document.getElementById('typing');
-            const currentKeyword = keywordElement.textContent;
-            const currentIndex = keywords.indexOf(currentKeyword);
-            const nextIndex = (currentIndex + 1) % keywords.length; 
-            keywordElement.textContent = keywords[nextIndex];
-        }
-        
-        
-        setInterval(changeKeyword, 1500);
-
-function showHideSkills(skillz) {
-    let skill = document.getElementsByClassName(`skill-items-${skillz}`)[0];;
-    let skilz = skill.querySelectorAll(`.skilz-${skillz}`);
-    let skilz_text = skill.querySelectorAll(`.text-${skillz}`);
-    let arrow_icon = document.getElementsByClassName(skillz)[0];
-
-        skill.classList.toggle("hide-skilz");
-
-    let c = 0;
-    skilz.forEach(skilz => {
-        skilz.classList.toggle(`show-skilz-${c+1}`);
-        c++;
-    });
-
-
-        skilz_text.forEach(text => {
-            text.classList.toggle("show-skilz-text");
-        });
-
-
-    arrow_icon.classList.toggle("fa-arrow-down");
-    arrow_icon.classList.toggle("fa-arrow-up");
 }
+
+function setMenuOpen(open) {
+    aside.classList.toggle("open", open);
+    navToggle.classList.toggle("open", open);
+    navToggle.setAttribute("aria-expanded", String(open));
+    for (const section of sections) {
+        section.classList.toggle("open", open);
+    }
+}
+
+navToggle.addEventListener("click", () => setMenuOpen(!aside.classList.contains("open")));
+nav.addEventListener("click", event => {
+    if (event.target.closest("a")) setMenuOpen(false);
+});
+window.addEventListener("hashchange", showCurrentSection);
+showCurrentSection();
+
+const styleSwitcher = document.querySelector(".style-switcher");
+const styleToggle = document.querySelector(".style-switcher-toggler");
+styleToggle.addEventListener("click", () => styleSwitcher.classList.toggle("open"));
+for (const section of sections) {
+    section.addEventListener("scroll", () => styleSwitcher.classList.remove("open"));
+}
+
+const alternateStyles = document.querySelectorAll(".alternate-style");
+function setActiveStyle(color) {
+    for (const style of alternateStyles) {
+        style.disabled = style.title !== color;
+    }
+}
+
+const dayNight = document.querySelector(".day-night");
+dayNight.addEventListener("click", () => {
+    const dark = document.body.classList.toggle("dark");
+    const icon = dayNight.querySelector("i");
+    icon.classList.toggle("fa-sun", dark);
+    icon.classList.toggle("fa-moon", !dark);
+});

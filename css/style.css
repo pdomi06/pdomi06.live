@@ -595,6 +595,11 @@ margin-bottom: 40px;
         left: 0;
     }
     .nav-toggler.open{
+        left: 300px;
+    }
+}
+@media (max-width:344px){
+    .nav-toggler.open{
         left: auto;
         right: 10px;
     }
